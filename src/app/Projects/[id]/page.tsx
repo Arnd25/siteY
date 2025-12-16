@@ -69,3 +69,11 @@ export default async function ArticlePage({params}: { params: Promise<{ id: stri
         </div>
     );
 }
+
+export async function generateStaticParams() {
+    const res = await fetch('https://strapitest.ybru.ru/api/projects');
+    const { data } = await res.json();
+    return data.map((article: any) => ({
+        id: article.id.toString(),
+    }));
+}

@@ -1,0 +1,162 @@
+1:"$Sreact.fragment"
+2:I[5500,["/_next/static/chunks/830a5e4b540dd4df.js","/_next/static/chunks/3ed9d616c74adb07.js","/_next/static/chunks/ad0a5a8fb2ac436e.js","/_next/static/chunks/0434e8cb22e550ab.js"],"Image"]
+5:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+3:T3b3f,<h1 class="text-4xl my-10 font-bold ">Как подружить Gorm и PostGIS, решение промышленного уровня.</h1>
+<p><a href="https://gorm.io/" class="text-blue-500 hover:underline hover:text-purple-700">GORM</a> Фантастическая ORM для Golang.</p>
+<p><a href="https://postgis.net/" class="text-blue-500 hover:underline hover:text-purple-700">PostGIS</a> расширяет возможности реляционной базы данных <a href="https://postgresql.org/" class="text-blue-500 hover:underline hover:text-purple-700">PostgreSQL</a> , добавляя поддержку хранения, индексирования и запросов геопространственных данных.</p>
+<p>В этой статье поделимся своим опытом интеграции GORM и PostGIS, сложностями при попытке использования gorm для работы с геометрическими данными и конечно предлагаем готовое решение.</p>
+<h3 class="text-2xl my-5 font-semibold  ">Задача</h3>
+<p>Реализация микросервиса, отвечающего за работу с геоданными:</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Хранение полигонов зон доставки;</li>
+<li>Хранение точек доставки (адресов покупателей);</li>
+<li>Поиск вхождений точки в зоны доставки заведений;</li>
+<li>Хранение маршрутов доставки, рассчитанных с учётом различных параметров.</li>
+</ul>
+<p>Поскольку, большая часть микросервисов в проекте (часть проекта описана в кейсе <a href="https://ybru.ru/projects/telegram-app-shawarma-bar-and-kinto-s/" class="text-blue-500 hover:underline hover:text-purple-700">Telegram App Shawarma bar &amp; KINTO’S</a>) написана на Go с основной реляционной СУБД PostgreSQL.  Было принято решение хранить данные микросервиса также в PostgreSQL, учитывая предшествующий положительный опыт работы с его расширением PostGIS.</p>
+<p>Был определён следующий <strong>стек технологий</strong>: Go, GORM, PostgreSQL, PostGIS.</p>
+<h4 class="text-xl my-3 font-medium ">Проблема интеграции GORM и PostGIS</h4>
+<p>Однако с самого начала было понятно что GORM не поддерживает геометрические типы данных “из коробки”, поэтому было принято решение использовать сырые SQL-запросы. Это решение не позволяло раскрыть возможности GORM и значительно увеличило сложность разработки и сопровождения микросервиса.</p>
+<p>Поиск решения в интернете не привёл к успеху. Единственное, что удалось найти - это пример реализации пользовательского типа <code>Location</code> на <a href="https://gorm.io/docs/data_types.html" class="text-blue-500 hover:underline hover:text-purple-700">сайте GORM</a> и несколько библиотек, поддерживающих лишь базовые геометрические типы (<code>Point</code> и в некоторых случаях <code>Polygon</code>).</p>
+<h4 class="text-xl my-3 font-medium ">Пример использования SQL-запросов для работы с геоданными</h4>
+<p>Для работы с геометрическими данными приходилось использовать SQL-запросы. Например, для получения полигона:</p>
+<pre class="my-6"><code class="block p-4  rounded bg-blue-950 text-white font-mono text-sm whitespace-pre-wrap break-words">SELECT 
+	p.id, 
+	p.address_id, 
+	ST_AsText(p.geo_polygon) as geo_polygon,
+FROM public.polygons p 
+WHERE p.id = $1
+</code></pre><p>Поле geo_polygon содержит полигон, с помощью функции <code>ST_AsText</code> преобразуется в текстовый формат wkt.</p>
+<p>Пример строки WKT, которая может содержаться в поле geo_polygon:</p>
+<pre class="my-6"><code class="block p-4  rounded bg-blue-950 text-white font-mono text-sm whitespace-pre-wrap break-words">POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))
+</code></pre><p>Затем этот текст нужно преобразовать в структуру для работы с полигоном внутри приложения.</p>
+<p>Для создания таблиц с геометрическими типами данных (миграции) также приходилось писать SQL-запросы:</p>
+<pre class="my-6"><code class="block p-4  rounded bg-blue-950 text-white font-mono text-sm whitespace-pre-wrap break-words">CREATE TABLE IF NOT EXISTS public.addresses (
+	id bigserial,
+	address text NULL,
+	geo_point geometry NOT NULL,
+
+	CONSTRAINT pk_address_id PRIMARY KEY(id)
+);
+</code></pre><h4 class="text-xl my-3 font-medium ">Основные проблемы</h4>
+
+    <ol class="list-decimal ps-6" >
+    <li>По сравнению с функциями которые используют возможности gorm в полном объёме, функции с SQL запросами были в 2-3 раза длиннее и соответственно менее читаемые.</li>
+<li>Пропадает возможность использовать автоматическую миграцию gorm.</li>
+<li>Был выбран неподходящий формат данных, так как использование WKT в разы менее производителен чем WKB, убедиться в этом помог <a href="https://github.com/opengeospatial/geoparquet/discussions/170#discussioncomment-5800433" class="text-blue-500 hover:underline hover:text-purple-700">бенчмарк</a>, который наглядно показывает разницу в производительности при работе с форматами WKT и WKB.</li>
+</ol>
+<p>Результаты бенчмарка:</p>
+<div class="table-responsive"><table class="border-collapse border-gray-500 w-full overflow-x-auto table-auto">
+    <thead class="border-gray-500"><tr class="border border-gray-500 p-2"><th class="border border-gray-500 p-2  font-medium ">Format</th>
+<th class="border border-gray-500 p-2  font-medium ">size</th>
+<th class="border border-gray-500 p-2  font-medium ">convert to</th>
+<th class="border border-gray-500 p-2  font-medium ">convert from</th>
+<th class="border border-gray-500 p-2  font-medium ">serialize to parquet</th>
+<th class="border border-gray-500 p-2  font-medium ">deserialize from parquet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-gray-500 p-2"><td class="border border-gray-500 p-2 text-center">wkb</td>
+<td class="border border-gray-500 p-2 text-center">54.6 MB</td>
+<td class="border border-gray-500 p-2 text-center">0.089s</td>
+<td class="border border-gray-500 p-2 text-center">0.046s</td>
+<td class="border border-gray-500 p-2 text-center">0.044s</td>
+<td class="border border-gray-500 p-2 text-center">0.03s</td>
+</tr>
+<tr class="border border-gray-500 p-2"><td class="border border-gray-500 p-2 text-center">wkt</td>
+<td class="border border-gray-500 p-2 text-center">71.6 MB</td>
+<td class="border border-gray-500 p-2 text-center">0.44s</td>
+<td class="border border-gray-500 p-2 text-center">0.45s</td>
+<td class="border border-gray-500 p-2 text-center">0.38s</td>
+<td class="border border-gray-500 p-2 text-center">0.12s</td>
+</tr>
+</tbody>
+</table></div>
+<p>Из результатов видно, что преобразование полигона в текстовый формат WKT для передачи в БД занимает в 5 раз больше времени, чем преобразование в бинарный формат WKB. А получения значения из базы в текстовом формате потребует в 9 раз больше времени чем данных в бинарном формате.</p>
+<h3 class="text-2xl my-5 font-semibold  ">Решение</h3>
+<p>Для упрощения и оптимизации работы с геоданными в GORM было принято решения написать свои типы для геометрий, которые будут расширять функциональность gorm.</p>
+<p>Реализована поддержка следующих типов:</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Point</li>
+<li>LineString</li>
+<li>Polygon</li>
+<li>MultiPoint</li>
+<li>MultiLineString</li>
+<li>MultiPolygon</li>
+<li>GeometryCollection</li>
+</ul>
+<p>Реализация интерфейсов:</p>
+
+    <ul class="list-disc ps-6" >
+    <li><a href="https://pkg.go.dev/database/sql#Scanner" class="text-blue-500 hover:underline hover:text-purple-700">sql.Scanner</a> и <a href="https://pkg.go.dev/database/sql/driver#Valuer" class="text-blue-500 hover:underline hover:text-purple-700">driver.Valuer</a> способствовала простому получению и записи данных.</li>
+<li><a href="https://pkg.go.dev/gorm.io/gorm/schema#GormDataTypeInterface" class="text-blue-500 hover:underline hover:text-purple-700">schema.GormDataTypeInterface</a> обеспечила правильное поведение GORM при миграции таблиц с геометрическими типами.</li>
+<li><a href="https://pkg.go.dev/fmt#Stringer" class="text-blue-500 hover:underline hover:text-purple-700">fmt.Stringer</a> добавила возможность отображения данных в человеко читаемом формате WKT.</li>
+</ul>
+<p>В основе решения лежит библиотека <a href="github.com/twpayne/go-geom" class="text-blue-500 hover:underline hover:text-purple-700">go-geom</a> реализующая эффективные типы геометрии для геопространственных приложений, кроме того go-geom имеет поддержку неограниченного количества измерений, реализует кодирование и декодирование в формат wkb и другие форматы, функции для работы с 2D и 3D топологиями и другие особенности.</p>
+<p>Решение является в некотором роде адаптацией go-geom для работы с GORM и получило название <strong>georm</strong> (сочетание слов “geometry” и “ORM”). Вы можете ознакомиться с решением на GitHub <a href="https://github.com/ybru-tech/georm" class="text-blue-500 hover:underline hover:text-purple-700">georm</a>.</p>
+<h4 class="text-xl my-3 font-medium ">Примеры использования</h4>
+<p>Описание структур с геометрическими типами:</p>
+<pre class="my-6"><code class="block p-4  rounded bg-blue-950 text-white font-mono text-sm whitespace-pre-wrap break-words">type Address struct {  
+    ID       uint `gorm:&quot;primaryKey&quot;`  
+    Address  string  
+    GeoPoint georm.Point  
+}  
+  
+type Zone struct {  
+    ID         uint `gorm:&quot;primaryKey&quot;`  
+    Title      string  
+    GeoPolygon georm.Polygon  
+}
+</code></pre><p>Простая, автоматическая миграция gorm.</p>
+<pre class="my-6"><code class="block p-4  rounded bg-blue-950 text-white font-mono text-sm whitespace-pre-wrap break-words">db.AutoMigrate(  
+    // CREATE TABLE &quot;addresses&quot; (&quot;id&quot; bigserial,&quot;address&quot; text,&quot;geo_point&quot; Geometry(Point, 4326),PRIMARY KEY (&quot;id&quot;))  
+    Address{},  
+    // CREATE TABLE &quot;zones&quot; (&quot;id&quot; bigserial,&quot;title&quot; text,&quot;geo_polygon&quot; Geometry(Polygon, 4326),PRIMARY KEY (&quot;id&quot;))  
+    Zone{},  
+)
+</code></pre><p>Полноценное использование возможностей ORM для запросов, передача геометрических данных в wkb формате:</p>
+<pre class="my-6"><code class="block p-4  rounded bg-blue-950 text-white font-mono text-sm whitespace-pre-wrap break-words">// INSERT INTO &quot;addresses&quot; (&quot;address&quot;,&quot;geo_point&quot;) VALUES ('some address','010100000000000000000045400000000000003840') RETURNING &quot;id&quot;  
+tx.Create(&amp;Address{  
+    Address: &quot;some address&quot;,  
+    GeoPoint: georm.Point{  
+       Geom: geom.NewPoint(geom.XY).MustSetCoords(geom.Coord{42, 24}),  
+    },  
+})
+// ...
+
+// INSERT INTO &quot;zones&quot; (&quot;title&quot;,&quot;geo_polygon&quot;) VALUES ('some zone','010300000001000000050000000000000000003e4000000000000024400000000000004440000000000000444000000000000034400000000000004440000000000000244000000000000034400000000000003e400000000000002440') RETURNING &quot;id&quot;
+tx.Create(&amp;Zone{  
+    Title: &quot;some zone&quot;,  
+    GeoPolygon: georm.Polygon{  
+       Geom: geom.NewPolygon(geom.XY).MustSetCoords([][]geom.Coord{  
+          {{30, 10}, {40, 40}, {20, 40}, {10, 20}, {30, 10}},  
+       }),  
+    },  
+})
+// ...
+
+// SELECT * FROM &quot;zones&quot; WHERE ST_Contains(geo_polygon, '0101000020e610000000000000000039400000000000003a40') ORDER BY &quot;zones&quot;.&quot;id&quot; LIMIT 1  
+db.Model(&amp;Zone{}).  
+    Where(&quot;ST_Contains(geo_polygon, ?)&quot;, point).  
+    First(&amp;result)
+// ...
+
+</code></pre><p>Не большой бонус - реализация интерфейса fmt.Stringer, вывод в человеко читаемом wkt формате.</p>
+<pre class="my-6"><code class="block p-4  rounded bg-blue-950 text-white font-mono text-sm whitespace-pre-wrap break-words">// POINT (25 26)  
+fmt.Println(georm.Point{  
+    Geom: geom.NewPoint(geom.XY).MustSetCoords(geom.Coord{25, 26}).SetSRID(georm.SRID),  
+})  
+  
+// POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))  
+fmt.Println(georm.Polygon{  
+    Geom: geom.NewPolygon(geom.XY).MustSetCoords([][]geom.Coord{  
+       {{30, 10}, {40, 40}, {20, 40}, {10, 20}, {30, 10}},  
+    }),  
+})
+</code></pre><p>Для получения дополнительной информации и примеров использования посетите репозиторий <a href="https://github.com/ybru-tech/georm" class="text-blue-500 hover:underline hover:text-purple-700">georm на GitHub</a>.</p>
+0:{"buildId":"iMnIBittzbL6au_Q1HsmL","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"py-30","children":["$","div",null,{"className":"w-full px-2 sm:px-6 md:px-14 lg:px-24 max-w-[1480px] mx-auto","children":["$","div",null,{"className":"w-full mx-auto py-10","children":[["$","div",null,{"className":"shadow-2xl px-5 py-2 rounded-2xl bg-gray-100","children":[["$","div",null,{"className":" w-full h-auto rounded-xl overflow-hidden","children":["$","$L2",null,{"src":"https://strapitest.ybru.ru/uploads/Page10_4_25f4b0da1b.png","alt":"","width":1,"height":1,"className":"object-cover w-full h-full","sizes":"1000"}]}],["$","h1",null,{"className":"text-3xl text-black font-bold mb-4","children":"Подружить Gorm и PostGIS, решение промышленного уровня"}],["$","p",null,{"className":"text-gray-600 mb-6","children":"\nИнтеграция GORM и PostGIS для работы с геоданными в микросервисах на Go может быть сложной из-за отсутствия нативной поддержки геометрических типов данных в GORM. В статье описано, как обойти эту проблему с помощью собственного решения — библиотеки georm, предоставляющей поддержку таких типов, как Point, Polygon и других."}]]}],["$","div",null,{"className":"text-black bg-white ","dangerouslySetInnerHTML":{"__html":"$3"}}]]}]}]}],null,"$L4"]}],"loading":null,"isPartial":false}
+4:["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]
+7:null

@@ -1,0 +1,244 @@
+1:"$Sreact.fragment"
+2:I[92825,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"ClientSegmentRoot"]
+3:I[53642,["/_next/static/chunks/830a5e4b540dd4df.js","/_next/static/chunks/3ed9d616c74adb07.js","/_next/static/chunks/ad0a5a8fb2ac436e.js","/_next/static/chunks/0434e8cb22e550ab.js"],"default"]
+4:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+5:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"default"]
+8:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+b:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"ViewportBoundary"]
+d:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"MetadataBoundary"]
+f:I[68027,[],"default"]
+:HL["/_next/static/chunks/cbe20c40552e0328.css","style"]
+:HL["/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"P":null,"b":"iMnIBittzbL6au_Q1HsmL","c":["","Articles","4"],"q":"","i":false,"f":[[["",{"children":["Articles",{"children":[["id","4","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/cbe20c40552e0328.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/830a5e4b540dd4df.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/3ed9d616c74adb07.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/ad0a5a8fb2ac436e.js","async":true,"nonce":"$undefined"}],["$","script","script-3",{"src":"/_next/static/chunks/0434e8cb22e550ab.js","async":true,"nonce":"$undefined"}]],["$","$L2",null,{"Component":"$3","slots":{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]},"serverProvidedParams":{"params":{},"promises":["$@6"]}}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",null,["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$@c"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$@e"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$f",[]],"S":true}
+6:"$0:f:0:1:0:props:children:1:props:serverProvidedParams:params"
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+10:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"IconMark"]
+e:[["$","link","0",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L10","1",{}]]
+a:null
+11:I[5500,["/_next/static/chunks/830a5e4b540dd4df.js","/_next/static/chunks/3ed9d616c74adb07.js","/_next/static/chunks/ad0a5a8fb2ac436e.js","/_next/static/chunks/0434e8cb22e550ab.js"],"Image"]
+12:T4db9,<h3 class="text-2xl my-5 font-semibold  ">Введение</h3>
+<p>Создание веб-сайтов стало доступнее благодаря конструкторам, которые позволяют разработать профессиональный проект без знания языков программирования. В 2024 году рынок предлагает множество вариантов с различными функциями для предпринимателей, дизайнеров и малого бизнеса. В этой статье представлен топ-22 конструкторов сайтов с анализом их возможностей, а также рекомендации по их использованию.</p>
+<h3 class="text-2xl my-5 font-semibold  ">Дисклеймер</h3>
+<p>Хотя конструкторы сайтов могут показаться быстрым и простым решением для запуска вашего проекта, они часто сталкиваются с рядом серьезных проблем, которые могут негативно сказаться на результатах вашего бизнеса. Ниже перечислены основные сложности, с которыми сталкиваются пользователи конструкторов, и как можно их преодолеть.</p>
+<p><strong>Проблемы с SEO</strong>
+Многие платформы не предлагают достаточных инструментов для оптимизации сайта под поисковые системы. Низкая скорость загрузки, ограниченные возможности редактирования метаданных и отсутствие гибкости в структуре сайта могут значительно снизить ваши шансы на успешное SEO-продвижение.</p>
+<p><strong>Проблемы с трафиком</strong>
+На некоторых конструкторах сайтов отсутствуют важные инструменты для работы с рекламой и сбора данных о трафике. Это ограничивает возможности настройки рекламных кампаний и интеграций с необходимыми аналитическими инструментами.</p>
+<p><strong>Проблемы с продажами</strong>
+Конструкторы часто не предоставляют функционала для создания полноценных воронок продаж, email-цепочек и удобных виджетов для взаимодействия с клиентами. Это может привести к снижению конверсии и потерям в продажах.</p>
+<p><strong>Проблемы с администрированием</strong>
+Администраторам сайтов на конструкторах часто требуется помощь специалистов для внесения малейших изменений, что замедляет процессы управления сайтом.</p>
+<hr>
+<p><strong>Не хотите сталкиваться с ограничениями конструкторов?</strong>
+<a href="https://t.me/ybru_dev" class="text-blue-500 hover:underline hover:text-purple-700">Напишите нам</a>, поможем перенести сайт или создать новый с нуля, без использования конструкторов. Получите полный контроль над функционалом, SEO-настройками и гибкость, необходимую для роста бизнеса.</p>
+<h3 class="text-2xl my-5 font-semibold  ">Методология оценки</h3>
+<p>Рейтинг составлен на основе комплексной оценки платформ, с учетом таких факторов, как удобство использования, возможности SEO, скорость загрузки и расширяемость функций. Каждый конструктор получил баллы по 170-балльной системе, что позволяет наглядно оценить их эффективность.</p>
+<h4 class="text-xl my-3 font-medium ">1. <strong>Базиум</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/1_e92cd9be9c.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p><strong>Лучший для SEO и интернет-магазинов</strong><br>
+Базиум лидирует в рейтинге благодаря мощным SEO-инструментам, поддержке блогов, онлайн-курсов и интернет-магазинов.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Превосходные SEO-показатели (PageSpeed 90+ баллов)</li>
+<li>Широкий функционал для бизнеса и маркетинга</li>
+<li>AI-инструменты для генерации контента</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">2. <strong>Тильда</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/2_828a61fc0d.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p><strong>Лучший для дизайнеров</strong><br>
+Тильда популярна благодаря Zero Block, который предлагает неограниченные возможности для дизайнеров. Однако у нее ниже показатели по SEO и интернет-магазинам.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Инновационный Zero Block для создания уникальных дизайнов</li>
+<li>Огромная библиотека готовых блоков</li>
+<li>Недостаточная поддержка SEO и e-commerce</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">3. <strong>Flexbe</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/3_5a8c2c6a23.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p><strong>Лучший для лендингов и квизов</strong><br>
+Этот конструктор прост в использовании и хорошо подходит для создания лендингов и интернет-магазинов с ограниченным функционалом.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Простота создания лендингов</li>
+<li>Поддержка квизов и форм</li>
+<li>Ограниченные возможности для многостраничных сайтов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">4. <strong>Mottor</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/4_df33c15cc3.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Платформа Mottor ориентирована на создание сайтов с квизами, чат-ботами и автоворонками.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Продвинутый функционал для автоматизации</li>
+<li>Недостаточная поддержка SEO</li>
+<li>Подходит для интернет-магазинов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">5. <strong>Craftum</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/5_e7a539f521.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Craftum — более доступная версия Тильды, с функциями для дизайнеров, но с ограниченными возможностями SEO и e-commerce.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Похож на Тильду с более низкой ценой</li>
+<li>Поддержка Zero Block и базовых функций</li>
+<li>Ограниченные возможности для крупных проектов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">6. <strong>Wfolio</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/6_6cd774eec8.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Этот конструктор нацелен на фотографов и позволяет создавать портфолио с простыми функциями для интернет-магазинов.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Специализация на фотографах</li>
+<li>Высокие показатели по SEO</li>
+<li>Ограниченный функционал для бизнеса</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">7. <strong>Creatium</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/7_882a2cbdad.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Creatium интегрируется с Google Sheets и Airtable, что делает его подходящим для проектов, требующих нестандартных решений.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Интеграция с внешними сервисами</li>
+<li>Ограниченная простота использования для новичков</li>
+<li>Подходит для сложных проектов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">8. <strong>Nethouse</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/8_bc76984c37.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Nethouse предоставляет широкий функционал для создания сайтов и интернет-магазинов, но дизайн остается устаревшим.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Хорошая поддержка дополнительных функций</li>
+<li>Низкие SEO-показатели</li>
+<li>Подходит для простых интернет-магазинов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">9. <strong>Insales</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/9_2dd6b5ada6.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Insales — это платформа для создания интернет-магазинов с возможностью расширить сайт до полноценного магазина.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Подходит для больших интернет-магазинов</li>
+<li>Низкие SEO-показатели</li>
+<li>Ограниченная поддержка AI-инструментов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">10. <strong>Фром</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/10_a950dc9328.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Фром — новый игрок на рынке, который предлагает решения для многостраничных сайтов и интернет-магазинов, но платформа требует доработки.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Новые функции для интернет-магазинов</li>
+<li>Ограниченные возможности SEO</li>
+<li>Подходит для корпоративных решений</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">11. <strong>Ukit</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/11_584efbe6cf.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>uKit ориентирован на малый бизнес с ограниченными возможностями по дизайну и SEO.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Широкий выбор адаптивных шаблонов</li>
+<li>Низкие показатели SEO</li>
+<li>Подходит для визиток и лендингов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">12. <strong>PlatformaLP</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/12_cee22592ae.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>PlatformaLP предназначена для быстрого создания лендингов с минимальными усилиями, но функционал ограничен.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Простота создания лендингов</li>
+<li>Ограниченный редактор и кастомизация</li>
+<li>Подходит для маркетинговых кампаний</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">13. <strong>Vigbo</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/13_5790d0b0b6.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Vigbo подходит для фотографов, но имеет проблемы с SEO и техническими функциями.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Хороший дизайн для портфолио</li>
+<li>Проблемы с базовыми SEO-настройками</li>
+<li>Ограниченная кастомизация</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">14. <strong>1C-UMI</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/14_20ad31aa3c.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>1C-UMI — старая платформа, которая не обновляется, с устаревшим интерфейсом.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Подходит для простых сайтов</li>
+<li>Устаревший функционал</li>
+<li>Низкая поддержка современных технологий</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">15. <strong>Тинькофф</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/15_cd6fb10d08.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Бесплатная платформа для создания простых сайтов, но с ограниченными функциями и SEO-показателями.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Бесплатный тариф</li>
+<li>Ограниченный функционал</li>
+<li>Проблемы с SEO и скоростью загрузки</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">16. <strong>Fo</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/16_2e8bc678a4.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Платформа Fo обладает низкими ценами, но устаревшим функционалом и ограниченными возможностями.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Низкая стоимость</li>
+<li>Устаревший дизайн</li>
+<li>Ограниченные функции</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">17. <strong>LPGenerator</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/17_ccd0d51735.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Этот конструктор устарел и не обновляется, что снижает его привлекательность для современных пользователей.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Ограниченные возможности</li>
+<li>Проблемы с SEO</li>
+<li>Устаревший интерфейс</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">18. <strong>Durable</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/18_89ff20e6bc.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>AI-конструктор, создающий сайты на основе простых запросов, но пока недостаточно гибкий для сложных проектов.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Автоматическая генерация контента</li>
+<li>Простой редактор</li>
+<li>Недостаточно гибкий для сложных сайтов</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">19. <strong>B12</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/19_0b6303caaa.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>AI-платформа с возможностью выбора ниши, но с ограниченным функционалом для больших проектов.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Легкость создания страниц</li>
+<li>Ограниченные функции для крупных сайтов</li>
+<li>Простота интеграций</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">20. <strong>Kleap</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/20_1b6997dabb.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Швейцарский AI-конструктор, который пока не дотягивает до конкурентов по качеству созданных сайтов.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Автоматическое создание сайтов</li>
+<li>Ограниченные возможности кастомизации</li>
+<li>Проблемы с адаптацией к мобильным устройствам</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">21. <strong>Webwave</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/21_a2bd477622.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Webwave предлагает достойные возможности для создания сайта, но редактор нуждается в доработке.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Возможность создания сложных сайтов</li>
+<li>Медленный процесс генерации страниц</li>
+<li>Хорошая поддержка адаптивности</li>
+</ul>
+<h4 class="text-xl my-3 font-medium ">22. <strong>Squarespace</strong></h4>
+<p><img src="https://strapitest.ybru.ru/uploads/22_75fc183d8b.png" alt="" class="rounded-xl" loading="lazy"></p>
+<p>Американская платформа с поддержкой сложных анимаций и кастомизации, но более дорогая.</p>
+
+    <ul class="list-disc ps-6" >
+    <li>Широкие возможности для создания сложных дизайнов</li>
+<li>Поддержка анимаций и эффектов</li>
+<li>Высокая стоимость</li>
+</ul>
+<h3 class="text-2xl my-5 font-semibold  ">Итоги</h3>
+<p>Каждая платформа имеет свои преимущества и недостатки. Для SEO и бизнеса лучшим выбором остается Базиум, для дизайнеров – Тильда, а для лендингов и малых проектов – Flexbe. AI-конструкторы только начинают развиваться и еще не достигли уровня классических платформ.</p>
+<hr>
+<p><strong>Не хотите сталкиваться с ограничениями конструкторов?</strong>
+<a href="https://t.me/ybru_dev" class="text-blue-500 hover:underline hover:text-purple-700">Напишите нам</a>, поможем перенести сайт или создать новый с нуля, без использования конструкторов. Получите полный контроль над функционалом, SEO-настройками и гибкость, необходимую для роста бизнеса.</p>
+7:["$","div",null,{"className":"py-30","children":["$","div",null,{"className":"w-full px-2 sm:px-6 md:px-14 lg:px-24 max-w-[1480px] mx-auto","children":["$","div",null,{"className":"w-full mx-auto py-10","children":[["$","div",null,{"className":"shadow-2xl px-5 py-2 rounded-2xl bg-gray-100","children":[["$","div",null,{"className":" w-full h-auto rounded-xl overflow-hidden","children":["$","$L11",null,{"src":"https://strapitest.ybru.ru/uploads/preview_png_c87dd60488.png","alt":"","width":1,"height":1,"className":"object-cover w-full h-full","sizes":"1000"}]}],["$","h1",null,{"className":"text-3xl text-black font-bold mb-4","children":"Топ 22 конструктора сайтов 2024 года"}],["$","p",null,{"className":"text-gray-600 mb-6","children":"В статье представлен рейтинг топ-22 конструкторов сайтов 2024 года с анализом их сильных и слабых сторон. Оценены такие критерии, как SEO, функциональность и удобство. Также рассмотрены проблемы платформ и предложены решения по созданию сайта без конструктора для более гибкой настройки."}]]}],["$","div",null,{"className":"text-black bg-white ","dangerouslySetInnerHTML":{"__html":"$12"}}]]}]}]}]
