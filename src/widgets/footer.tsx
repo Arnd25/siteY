@@ -31,7 +31,7 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col text-2xl gap-2 md-order-2 order-3">
                         <Link href={""} className="hover:text-indigo-500 transition-all duration-300">example@mail.com</Link>
-                        <Link href={""} className="hover:text-indigo-500 transition-all duration-300">+7 232 2322 23 23</Link>
+                        <Link href={""} className="hover:text-indigo-500 transition-all duration-300">+7 123 456 78 90</Link>
                     </div>
                     <div className="order-4">
                         <Button className="text-2xl bg-transparent hover:bg-transparent border-2 rounded-4xl font-normal border-blue-500 py-8 px-6">Связаться с нами</Button>
