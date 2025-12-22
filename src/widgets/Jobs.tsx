@@ -39,7 +39,7 @@ const Jobs = () => {
     useEffect(() => {
         const fetchArticles = async () => {
             try {
-                const response = await axios.get("https://strapitest.ybru.ru/api/jobs");
+                const response = await axios.get("api/jobs");
                 const data: JobsAttributes[] = response.data.data;
                 const activeJobs = data.filter(job => !job.attributes.isDisabled);
                 setJobs(activeJobs);
