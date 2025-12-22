@@ -30,7 +30,7 @@ type ArticleItem = {
 
 
 async function fetchArticles(): Promise<ArticleItem[]> {
-    const response = await axios.get("/api/projects");
+    const response = await axios.get("/api/atricles");
     return response.data.data;
 }
 
