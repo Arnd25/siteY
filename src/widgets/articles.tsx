@@ -30,16 +30,15 @@ type ArticleItem = {
 
 
 async function fetchArticles(): Promise<ArticleItem[]> {
-    const response = await axios.get("https://strapitest.ybru.ru/api/articles");
+    const response = await axios.get("/api/projects");
     return response.data.data;
 }
 
-const getImageUrl = (img: ArticleImg) => {
-    if (!img.data.attributes.url) {
-        return ' ';
-    }
-    const url = img.data.attributes.url;
-    return `https://strapitest.ybru.ru${url}`;
+const getImageUrl = (img: ProjectImg) => {
+  const urlPart = img.data.attributes.url; 
+  if (!urlPart) return '/placeholder.jpg';
+
+  return `https://strapitest.ybru.ru${urlPart}`;
 };
 
 const Articles = ({ page = 'notmain' }: { page?: string }) => {
@@ -74,10 +73,10 @@ const Articles = ({ page = 'notmain' }: { page?: string }) => {
 
                         return (
 
-                            <li key={article.id} className="w-full flex flex-col ">
+                            <li key={article.id} className="w-full h-full flex flex-col ">
                                 <div className="relative w-full  overflow-hidden rounded-t-2xl">
-                                    <img
-                                        src={imageUrl}
+                                    <Image
+                                        src={getImageUrl(article.attributes.cover)}
                                         alt={'Изображение статьи'}
                                         width={2143}
                                         height={2143}
