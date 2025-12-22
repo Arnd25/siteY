@@ -43,7 +43,7 @@ const getImageUrl = (img: ProjectImg) => {
         return ' ';
     }
     const url = img.data.attributes.url;
-    return `https://strapitest.ybru.ru${url}`;
+    return `/api/projects${url}`;
 };
 
 const Projects = ({ page = 'notmain' }: { page?: string }) => {
@@ -79,7 +79,7 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                             return (
                                 <li key={project.id} className="relative">
                                     <img
-                                        src={`https://strapitest.ybru.ru${project.attributes.cover.data.attributes.url}`}
+                                        src={/api${project.attributes.cover.data.attributes.url}`}
                                         alt={""}
                                         width={2143}
                                         height={2143}
