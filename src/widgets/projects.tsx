@@ -34,7 +34,7 @@ type ProjectItem = {
 
 
 async function fetchProjects(): Promise<ProjectsAttributes[]> {
-    const response = await axios.get("https://strapitest.ybru.ru/api/projects");
+    const response = await axios.get("/api/projects");
     return response.data.data;
 }
 
