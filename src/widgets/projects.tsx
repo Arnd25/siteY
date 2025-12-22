@@ -39,8 +39,8 @@ async function fetchProjects(): Promise<ProjectsAttributes[]> {
 }
 
 const getImageUrl = (img: ProjectImg) => {
-  const url = img.data.attributes.url;
-  return url ? `https://strapitest.ybru.ru${url}` : '';
+  const url = img.data.attributes.url; // например: "/abc.png"
+  return url ? `/uploads${url}` : '/placeholder.jpg';
 };
 
 const Projects = ({ page = 'notmain' }: { page?: string }) => {
@@ -76,7 +76,7 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                             return (
                                 <li key={project.id} className="relative">
                                     <img
-                                        src={/uploads(project.attributes.cover)} 
+                                        src={getImageUrl(project.attributes.cover)} 
                                         alt={""}
                                         width={214}
                                         height={214}
