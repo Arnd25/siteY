@@ -8,7 +8,6 @@ import {filter} from "eslint-config-next";
 import {Button} from "@/components/ui/button";
 import {useRouter} from "next/navigation";
 import {md} from "@/components/shared/renderclases";
-import "swiper/css"
 import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
 import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
 
