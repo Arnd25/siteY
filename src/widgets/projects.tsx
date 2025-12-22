@@ -40,7 +40,7 @@ async function fetchProjects(): Promise<ProjectsAttributes[]> {
 
 const getImageUrl = (img: ProjectImg) => {
   const url = img.data.attributes.url;
-  return url ? `/api${url}` : ''; // ← например: "/api/uploads/cover.jpg"
+  return url ? `https://strapitest.ybru.ru${url}` : ''; // ← например: "/api/uploads/cover.jpg"
 };
 
 const Projects = ({ page = 'notmain' }: { page?: string }) => {
