@@ -77,26 +77,26 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
 
                             return (
                                 <li key={project.id} className="relative w-full">
-                                  {/* Обёртка, которая займёт всю доступную ширину и адаптивную высоту */}
-                                  <div className="relative w-full aspect-video rounded-2xl border-2 border-gray-300 overflow-hidden">
-                                    {/* Image в режиме fill — растягивается на всю обёртку */}
+                                  
+                                  <div className="relative w-full rounded-2xl border-2 border-gray-300">
+                                    
                                     <Image
                                       src={getImageUrl(project.attributes.cover)}
                                       alt={project.attributes.title}
                                       fill
-                                      className="object-cover"
-                                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                      className="object-auto"
+                                      sizes="200"
                                       priority={false}
                                     />
                                 
-                                    {/* Заголовок — растянут на ширину картинки */}
+                                    
                                     <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/50 to-transparent">
                                       <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow">
                                         {project.attributes.title}
                                       </h3>
                                     </div>
                                 
-                                    {/* Кнопка */}
+                                   
                                     <Button
                                       onClick={ButtonClicked(project.id)}
                                       className="absolute bottom-5 right-5 bg-indigo-900 px-6 py-3 text-base sm:text-lg hover:bg-indigo-500 transition"
