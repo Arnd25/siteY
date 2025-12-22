@@ -65,7 +65,7 @@ const Jobs = () => {
                         const markdownContent = JobAttributes.content
                         const result = md.render(markdownContent);
                         return (
-                            <li key={Job.id} className="text-black shadow-2xl p-8 flex flex-col w-full justify-baseline bg-gray-200 rounded-2xl">
+                            <li key={Job.id} className="text-black shadow-2xl p-2 lg:p-8 flex flex-col w-full justify-baseline bg-gray-200 rounded-2xl">
                                 <h2 className="text-4xl font-medium">{JobAttributes.title}</h2>
                                 <div className="flex flex-col  gap-5 h-full justify-between">
                                     <div dangerouslySetInnerHTML={{ __html: result }} />
