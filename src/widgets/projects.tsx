@@ -81,8 +81,8 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                                     <Image
                                         src={getImageUrl(project.attributes.cover)} 
                                         alt={""}
-                                        width={214}
-                                        height={214}
+                                        width={2145}
+                                        height={2145}
                                         className="object-cover w-full h-full rounded-2xl border-2 border-gray-300 "/>
                                     <div className="absolute top-0 left-0 p-4">
                                         <h3 className="sm:text-2xl font-bold text-lg">{ProjectAttributes.title}</h3>
