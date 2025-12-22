@@ -69,7 +69,7 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
     if (!Projects || Projects.length === 0)
         return <Container className="py-40 min-h-screen"><div className="text-black text-6xl text-center"></div></Container>;
     return (
-        <Container className="pt-40 px-5 xl:px-0 ">
+        <Container className="pt-40 px-2 xl:px-0 ">
             <div className="flex flex-col gap-10 w-full py-5 text-black">
                 <h2 className="text-5xl ">Проекты</h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-10 justify-items-center ">
