@@ -34,7 +34,7 @@ async function fetchArticles(): Promise<ArticleItem[]> {
     return response.data.data;
 }
 
-const getImageUrl = (img: ProjectImg) => {
+const getImageUrl = (img: ArticleImg) => {
   const urlPart = img.data.attributes.url; 
   if (!urlPart) return '/placeholder.jpg';
 
