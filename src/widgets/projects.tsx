@@ -1,3 +1,4 @@
+
 "use client"
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -76,34 +77,18 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                             const ProjectAttributes = project.attributes;
 
                             return (
-                                <li key={project.id} className="relative w-full">
-                                  
-                                  <div className="relative w-full rounded-2xl border-2 border-gray-300">
-                                    
+                                <li key={project.id} className="relative">
                                     <Image
-                                      src={getImageUrl(project.attributes.cover)}
-                                      alt={project.attributes.title}
-                                      fill
-                                      className="object-auto"
-                                      sizes="200"
-                                      priority={false}
-                                    />
-                                
-                                    
-                                    <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/50 to-transparent">
-                                      <h3 className="text-lg sm:text-2xl font-bold text-white drop-shadow">
-                                        {project.attributes.title}
-                                      </h3>
+                                        src={getImageUrl(project.attributes.cover)} 
+                                        alt={""}
+                                        width={214}
+                                        height={214}
+                                        className="object-cover w-full h-full rounded-2xl border-2 border-gray-300 "/>
+                                    <div className="absolute top-0 left-0 p-4">
+                                        <h3 className="sm:text-2xl font-bold text-lg">{ProjectAttributes.title}</h3>
+
                                     </div>
-                                
-                                   
-                                    <Button
-                                      onClick={ButtonClicked(project.id)}
-                                      className="absolute bottom-5 right-5 bg-indigo-900 px-6 py-3 text-base sm:text-lg hover:bg-indigo-500 transition"
-                                    >
-                                      Подробнее
-                                    </Button>
-                                  </div>
+                                    <Button onClick={ButtonClicked(project.id)} className="absolute bottom-5 right-5 bg-indigo-900 px-8 font-normal py-6 text-lg sm:text-xl hover:bg-indigo-500 transition-all duration-300" >Подробнее</Button>
                                 </li>
                             )
                         })}
