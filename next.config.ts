@@ -15,9 +15,14 @@ const nextConfig: NextConfig = {
     async rewrites() {
         return [
             {
-                source: "/api/:path*",
-                destination: "https://strapitest.ybru.ru/api/:path*",
-            },
+        source: "/api/:path*",
+        destination: "https://strapitest.ybru.ru/api/:path*",
+      },
+      // Прокси для изображений
+      {
+        source: "/uploads/:path*",
+        destination: "https://strapitest.ybru.ru/uploads/:path*",
+      },
         ];
     },
     reactCompiler: true,
