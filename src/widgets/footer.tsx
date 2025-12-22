@@ -10,7 +10,7 @@ import {MENU_DATA} from "@/data/menu.data";
 const Footer = () => {
     return (
         <footer className="bg-blue-950 pt-8">
-            <Container className="flex flex-col gap-15">
+            <Container className="flex flex-col px-2 gap-15">
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 justify-between w-full ">
                     <div className="flex flex-col gap-10 order-1">
                         <Image src={Logo} alt="Logo"/>
