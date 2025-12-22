@@ -9,8 +9,8 @@ import {MENU_DATA} from "@/data/menu.data";
 
 const Footer = () => {
     return (
-        <footer className="bg-blue-950 p-5">
-            <Container>
+        <footer className="bg-blue-950 pt-8">
+            <Container className="flex flex-col gap-15">
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 justify-between w-full ">
                     <div className="flex flex-col gap-10 order-1">
                         <Image src={Logo} alt="Logo"/>
@@ -34,11 +34,12 @@ const Footer = () => {
                         <Link href={""} className="hover:text-indigo-500 transition-all duration-300">+7 123 456 78 90</Link>
                     </div>
                     <div className="order-4">
-                        <Button className="text-2xl bg-transparent hover:bg-transparent border-2 rounded-4xl font-normal border-blue-500 py-8 px-6">Связаться с нами</Button>
+                        <Button className="text-2xl bg-transparent hover:bg-transparent border-2 rounded-4xl font-normal border-blue-500 py-8 px-4 xl:px-8">Связаться с нами</Button>
                     </div>
                 </div>
                 <p className="text-gray-400">© 2025 ООО «НПК «РПР». Все права защищены.</p>
             </Container>
+
         </footer>
     );
 };
