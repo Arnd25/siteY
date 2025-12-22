@@ -76,7 +76,7 @@ const Articles = ({ page = 'notmain' }: { page?: string }) => {
 
                             <li key={article.id} className="w-full flex flex-col ">
                                 <div className="relative w-full  overflow-hidden rounded-t-2xl">
-                                    <Image
+                                    <img
                                         src={imageUrl}
                                         alt={'Изображение статьи'}
                                         width={2143}

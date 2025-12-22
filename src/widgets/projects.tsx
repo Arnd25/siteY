@@ -75,12 +75,11 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 w-full gap-10 justify-items-center ">
                         {Projects.map((project) => {
                             const ProjectAttributes = project.attributes;
-                            const imageUrl = getImageUrl(project.attributes.cover);
 
                             return (
                                 <li key={project.id} className="relative">
-                                    <Image
-                                        src={imageUrl}
+                                    <img
+                                        src={`https://strapitest.ybru.ru${project.attributes.cover.data.attributes.url}`}
                                         alt={""}
                                         width={2143}
                                         height={2143}

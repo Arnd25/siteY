@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'strapitest.ybru.ru',
                 port: '',
-                pathname: '/uploads/**',
             },
         ],
     },
