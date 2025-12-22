@@ -39,11 +39,8 @@ async function fetchProjects(): Promise<ProjectsAttributes[]> {
 }
 
 const getImageUrl = (img: ProjectImg) => {
-    if (!img.data.attributes.url) {
-        return ' ';
-    }
-    const url = img.data.attributes.url;
-    return `/api/projects${url}`;
+  const url = img.data.attributes.url;
+  return url ? `/api${url}` : ''; // ← например: "/api/uploads/cover.jpg"
 };
 
 const Projects = ({ page = 'notmain' }: { page?: string }) => {
@@ -79,7 +76,7 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                             return (
                                 <li key={project.id} className="relative">
                                     <img
-                                        src={/api${project.attributes.cover.data.attributes.url}`}
+                                        src={getImageUrl(project.attributes.cover)} 
                                         alt={""}
                                         width={2143}
                                         height={2143}
