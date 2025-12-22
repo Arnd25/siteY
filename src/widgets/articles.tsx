@@ -62,7 +62,7 @@ const Articles = ({ page = 'notmain' }: { page?: string }) => {
         return <Container className="py-40 min-h-screen"><div className="text-black text-6xl text-center">Пусто</div></Container>;
 
     return (
-        <Container className="px-0">
+        <Container className="px-2">
             <div className="items-center flex flex-col justify-center w-full py-5 mt-30" >
                 {Page === "main" && (
                     <h2 className="text-5xl  text-black my-16">Блог</h2>
