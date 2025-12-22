@@ -82,7 +82,7 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                                         alt={""}
                                         width={214}
                                         height={214}
-                                        className="object-cover rounded-2xl border-2 border-gray-300 "/>
+                                        className="object-cover w-full h-full rounded-2xl border-2 border-gray-300 "/>
                                     <div className="absolute top-0 left-0 p-4">
                                         <h3 className="sm:text-2xl font-bold text-lg">{ProjectAttributes.title}</h3>
 
