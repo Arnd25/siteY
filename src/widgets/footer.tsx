@@ -37,6 +37,7 @@ const Footer = () => {
                         <Button className="text-2xl bg-transparent hover:bg-transparent border-2 rounded-4xl font-normal border-blue-500 py-8 px-6">Связаться с нами</Button>
                     </div>
                 </div>
+                <p className="text-gray-400">© 2025 ООО «НПК «РПР». Все права защищены.</p>
             </Container>
         </footer>
     );
