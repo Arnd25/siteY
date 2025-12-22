@@ -78,9 +78,10 @@ const Articles = ({ page = 'notmain' }: { page?: string }) => {
                                     <Image
                                         src={getImageUrl(article.attributes.cover)}
                                         alt={'Изображение статьи'}
+                                        
                                         width={2143}
                                         height={2143}
-                                        loading="eager"
+                                        loading="lazy"
                                         className="object-cover border-indigo-950 border-2 rounded-t-2xl"
 
 
