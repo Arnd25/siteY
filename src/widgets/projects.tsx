@@ -77,7 +77,7 @@ const Projects = ({ page = 'notmain' }: { page?: string }) => {
                             const ProjectAttributes = project.attributes;
 
                             return (
-                                <li key={project.id} className="relative">
+                                <li key={project.id} className="relative w-full h-full">
                                     <Image
                                         src={getImageUrl(project.attributes.cover)} 
                                         alt={""}
