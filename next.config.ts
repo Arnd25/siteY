@@ -18,7 +18,6 @@ const nextConfig: NextConfig = {
         source: "/api/:path*",
         destination: "https://strapitest.ybru.ru/api/:path*",
       },
-      // Прокси для изображений
       {
         source: "/uploads/:path*",
         destination: "https://strapitest.ybru.ru/uploads/:path*",
